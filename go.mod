@@ -1,6 +1,6 @@
 module github.com/test-network-function/graphsolver-minimal
 
-go 1.21.2
+go 1.21.3
 
 require (
 	github.com/test-network-function/graphsolver-lib v0.0.3
