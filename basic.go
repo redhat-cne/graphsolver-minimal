@@ -1,8 +1,8 @@
 package main
 
 import (
-	lib "github.com/test-network-function/graphsolver-lib"
-	l2lib "github.com/test-network-function/l2discovery-exports"
+	lib "github.com/redhat-best-practices-for-k8s/graphsolver-lib"
+	l2lib "github.com/redhat-best-practices-for-k8s/l2discovery-exports"
 )
 
 type testGraph struct {
@@ -40,8 +40,8 @@ func main() {
 		tagGrandmaster = 1
 	)
 
-	if1 := l2lib.PtpIf{IfClusterIndex: l2lib.IfClusterIndex{IfName: "ens3f0", NodeName: "node1"}, MacAddress: "52:55:00:81:c2:62", IfPci: l2lib.PCIAddress{Device: "00:03", Function: "0"}}
-	if2 := l2lib.PtpIf{IfClusterIndex: l2lib.IfClusterIndex{IfName: "ens3f0", NodeName: "node2"}, MacAddress: "52:55:00:81:c2:63", IfPci: l2lib.PCIAddress{Device: "00:03", Function: "0"}}
+	if1 := l2lib.PtpIf{IfClusterIndex: l2lib.IfClusterIndex{InterfaceName: "ens3f0", NodeName: "node1"}, Iface: l2lib.Iface{IfMac: l2lib.Mac{Data: "52:55:00:81:c2:62"}, IfPci: l2lib.PCIAddress{Device: "00:03", Function: "0"}}}
+	if2 := l2lib.PtpIf{IfClusterIndex: l2lib.IfClusterIndex{InterfaceName: "ens3f0", NodeName: "node2"}, Iface: l2lib.Iface{IfMac: l2lib.Mac{Data: "52:55:00:81:c2:63"}, IfPci: l2lib.PCIAddress{Device: "00:03", Function: "0"}}}
 	lans := [][]int{{0, 1}}
 	aGraph := testGraph{ifList: []*l2lib.PtpIf{&if1, &if2}, lans: &lans, ptpInterfaces: nil}
 
