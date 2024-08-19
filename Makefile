@@ -10,3 +10,5 @@ install-lint:
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b ${GO_PATH}/bin ${GOLANGCI_VERSION}
 test:
 	scripts/test.sh
+vet:
+	go vet ${GO_PACKAGES}
