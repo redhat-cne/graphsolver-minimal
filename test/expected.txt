@@ -1,0 +1,7 @@
+level=info msg="Solutions for OC problem"
+level=info msg="p0= node1 : ens3f0"
+level=info msg="p1= node2 : ens3f0"
+level=info msg=---
+level=info msg="p0= node2 : ens3f0"
+level=info msg="p1= node1 : ens3f0"
+level=info msg=---
